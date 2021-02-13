@@ -8,6 +8,6 @@
 </head>
 <body>
     <a href="/">หน้าแรก</a> | <a href="/about">เกี่ยวกับเรา</a> | <a href="/contact">ติดต่อเรา</a>
-<h1>Hello world</h1>
+<h1>contact page</h1>
 </body>
 </html>

@@ -3,7 +3,7 @@
 @section('content')
 
 <h1>หมวดหมู่ข่าว</h1>
-<a href="/catregoy/create">+ เพิ่มหมวดหมู่ใหม่</a>
+<a href="/user/create">+ เพิ่มหมวดหมู่ใหม่</a>
 <table>
     <thead>
         <tr>
@@ -14,12 +14,12 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($categories as $item)
+        @foreach($user as $item)
         <tr>
             <td>{{$item->id}}</td>
             <td>{{$item->name}}</td>
             <td>{{$item->created_at}}</td>
-            <td><a href="/category/edit/{{$item->id}}">แก้ไข</a> | <a href="/category/delete/{{$item->id}}">ลบ</a></td>
+            <td><a href="/user/edit/{{$item->id}}">แก้ไข</a> | <a href="/user/delete/{{$item->id}}">ลบ</a></td>
         </tr>
         @endforeach
     </tbody>

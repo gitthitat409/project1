@@ -10,7 +10,7 @@ class UserController extends Controller
     public function index()
     {
         $data = [
-            'user' => User::all(), //Select*from Category
+            'user' => User::all(), //Select*from user
         ];
         return view('user.index', $data);
     }

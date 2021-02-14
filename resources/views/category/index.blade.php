@@ -3,7 +3,7 @@
 @section('content')
 
 <h1>หมวดหมู่ข่าว</h1>
-<a href="/catregoy/create">+ เพิ่มหมวดหมู่ใหม่</a>
+<a href="/category/create">+ เพิ่มหมวดหมู่ใหม่</a>
 <table>
     <thead>
         <tr>

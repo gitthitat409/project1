@@ -7,8 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="/">หน้าแรก</a> | <a href="/about">เกี่ยวกับเรา</a> | <a href="/contact">ติดต่อเรา</a> | <a href="/category">ข่าว</a> | <a href="/user">ผู้ใช้</a> | <a href="/post">โพสต์กระทู้</a>
- @yield("content")
+    <a href="/">หน้าแรก</a> | <a href="/about">เกี่ยวกับเรา</a> | <a href="/contact">ติดต่อเรา</a> | <a href="/category">ข่าว</a> | <a href="/user">ผู้ใช้</a> | <a href="/post">โพสต์กระทู้</a><br>
+   สวัสดี @if(auth()->check()) {{auth()->user()->name}} <a href="/auth/logout">ออกจากระบบ</a> @else บุคคลทั่วไป @endif
+   @yield("content")
 <hr>
 &copy; 2021 Gitthitat Laosing
 </body>

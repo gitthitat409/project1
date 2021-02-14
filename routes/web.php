@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
@@ -42,3 +43,9 @@ Route::post('/post/store', [PostController::class, 'store']);
 Route::get('/post/edit/{id}', [PostController::class, 'edit']);
 Route::post('/post/update/{id}', [PostController::class, 'update']);
 Route::get('/post/delete/{id}', [PostController::class, 'delete']);
+
+Route::get('/auth/login', [AuthController::class, 'login'])->name('login');
+Route::post('/auth/doLogin', [AuthController::class, 'doLogin']);
+Route::get('/auth/register', [AuthController::class, 'register']);
+Route::post('/auth/doRegister', [AuthController::class, 'doRegister']);
+Route::get('/auth/logout', [AuthController::class, 'logout']);

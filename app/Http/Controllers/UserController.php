@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function index()
     {
         $data = [
@@ -23,10 +27,16 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $name = $request->input('name');
+        $username = $request->input('username');
+        $email = $request->input('email');
+        $password = $request->input('password');
 
         $user = new User();
-        $user->name = $name;
-        $user->save();
+        $user ->name = $name;
+        $user ->username = $username;
+        $user ->email =$email;
+        $user ->password = Hash::make($password);
+        $user ->save();
 
         return redirect('/user');
     }
@@ -44,10 +54,16 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $name = $request->input('name');
+        $username = $request->input('username');
+        $email = $request->input('email');
+        $password = $request->input('password');
 
         $user = User::find($id);
-        $user->name = $name;
-        $user->save();
+        $user ->name = $name;
+        $user ->username = $username;
+        $user ->email =$email;
+        $user ->password = Hash::make($password);
+        $user ->save();
 
         return redirect('/user');
     }
@@ -56,7 +72,7 @@ class UserController extends Controller
     //select*form where id
     {
         $user = User::find($id);
-        $user ->delete();
+        $user->delete();
 
         return redirect('/user');
     }
